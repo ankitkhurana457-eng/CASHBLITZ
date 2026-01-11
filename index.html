@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CashBlitz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <h1>💰 CashBlitz</h1>
+  <p>Loading...</p>
+</div>
+
+<!-- APP -->
+<div id="app" style="display:none">
+
+  <!-- HEADER -->
+  <div class="header">CashBlitz</div>
+
+  <!-- SCREENS -->
+  <div class="screen active" id="home">
+    <h2 id="points">0 Coins</h2>
+    <button onclick="earn()">Earn Coins</button>
+  </div>
+
+  <div class="screen" id="tasks">
+    <h2>Daily Bonus</h2>
+    <button onclick="dailyBonus()">Claim +50 Coins</button>
+  </div>
+
+  <div class="screen" id="wallet">
+    <h2>Your Wallet</h2>
+    <p>Total Coins</p>
+    <h3 id="walletCoins">0</h3>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div class="nav">
+    <button onclick="showScreen('home')">Home</button>
+    <button onclick="showScreen('tasks')">Tasks</button>
+    <button onclick="showScreen('wallet')">Wallet</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+setTimeout(() => {
+  document.getElementById("splash").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}, 2000);
+</script>
+
+</body>
+</html>
